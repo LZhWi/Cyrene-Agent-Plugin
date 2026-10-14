@@ -1,0 +1,452 @@
+[
+  {
+    "name": "@azure/msal-common",
+    "version": "14.16.1",
+    "relative": "@azure\\msal-common"
+  },
+  {
+    "name": "@azure/msal-node",
+    "version": "2.16.3",
+    "relative": "@azure\\msal-node"
+  },
+  {
+    "name": "@types/node",
+    "version": "26.2.0",
+    "relative": "@types\\node"
+  },
+  {
+    "name": "@types/node-rsa",
+    "version": "1.1.4",
+    "relative": "@types\\node-rsa"
+  },
+  {
+    "name": "@types/readable-stream",
+    "version": "4.0.24",
+    "relative": "@types\\readable-stream"
+  },
+  {
+    "name": "@xboxreplay/xboxlive-auth",
+    "version": "5.1.0",
+    "relative": "@xboxreplay\\xboxlive-auth"
+  },
+  {
+    "name": "abort-controller",
+    "version": "3.0.0",
+    "relative": "abort-controller"
+  },
+  {
+    "name": "aes-js",
+    "version": "3.1.2",
+    "relative": "aes-js"
+  },
+  {
+    "name": "ajv",
+    "version": "6.15.0",
+    "relative": "ajv"
+  },
+  {
+    "name": "asn1",
+    "version": "0.2.3",
+    "relative": "asn1"
+  },
+  {
+    "name": "base64-js",
+    "version": "1.5.1",
+    "relative": "base64-js"
+  },
+  {
+    "name": "buffer",
+    "version": "6.0.3",
+    "relative": "buffer"
+  },
+  {
+    "name": "buffer-equal",
+    "version": "1.0.1",
+    "relative": "buffer-equal"
+  },
+  {
+    "name": "buffer-equal-constant-time",
+    "version": "1.0.1",
+    "relative": "buffer-equal-constant-time"
+  },
+  {
+    "name": "commander",
+    "version": "2.20.3",
+    "relative": "commander"
+  },
+  {
+    "name": "debug",
+    "version": "4.4.3",
+    "relative": "debug"
+  },
+  {
+    "name": "discontinuous-range",
+    "version": "1.0.0",
+    "relative": "discontinuous-range"
+  },
+  {
+    "name": "ecdsa-sig-formatter",
+    "version": "1.0.11",
+    "relative": "ecdsa-sig-formatter"
+  },
+  {
+    "name": "endian-toggle",
+    "version": "0.0.0",
+    "relative": "endian-toggle"
+  },
+  {
+    "name": "event-target-shim",
+    "version": "5.0.1",
+    "relative": "event-target-shim"
+  },
+  {
+    "name": "events",
+    "version": "3.3.0",
+    "relative": "events"
+  },
+  {
+    "name": "fast-deep-equal",
+    "version": "3.1.3",
+    "relative": "fast-deep-equal"
+  },
+  {
+    "name": "fast-json-stable-stringify",
+    "version": "2.1.0",
+    "relative": "fast-json-stable-stringify"
+  },
+  {
+    "name": "ieee754",
+    "version": "1.2.1",
+    "relative": "ieee754"
+  },
+  {
+    "name": "json-schema-traverse",
+    "version": "0.4.1",
+    "relative": "json-schema-traverse"
+  },
+  {
+    "name": "jsonwebtoken",
+    "version": "9.0.3",
+    "relative": "jsonwebtoken"
+  },
+  {
+    "name": "jwa",
+    "version": "2.0.1",
+    "relative": "jwa"
+  },
+  {
+    "name": "jws",
+    "version": "4.0.1",
+    "relative": "jws"
+  },
+  {
+    "name": "lodash.includes",
+    "version": "4.3.0",
+    "relative": "lodash.includes"
+  },
+  {
+    "name": "lodash.isboolean",
+    "version": "3.0.3",
+    "relative": "lodash.isboolean"
+  },
+  {
+    "name": "lodash.isinteger",
+    "version": "4.0.4",
+    "relative": "lodash.isinteger"
+  },
+  {
+    "name": "lodash.isnumber",
+    "version": "3.0.3",
+    "relative": "lodash.isnumber"
+  },
+  {
+    "name": "lodash.isplainobject",
+    "version": "4.0.6",
+    "relative": "lodash.isplainobject"
+  },
+  {
+    "name": "lodash.isstring",
+    "version": "4.0.1",
+    "relative": "lodash.isstring"
+  },
+  {
+    "name": "lodash.merge",
+    "version": "4.6.2",
+    "relative": "lodash.merge"
+  },
+  {
+    "name": "lodash.once",
+    "version": "4.1.1",
+    "relative": "lodash.once"
+  },
+  {
+    "name": "lodash.reduce",
+    "version": "4.6.0",
+    "relative": "lodash.reduce"
+  },
+  {
+    "name": "macaddress",
+    "version": "0.5.4",
+    "relative": "macaddress"
+  },
+  {
+    "name": "minecraft-data",
+    "version": "3.113.1",
+    "relative": "minecraft-data"
+  },
+  {
+    "name": "minecraft-folder-path",
+    "version": "1.2.0",
+    "relative": "minecraft-folder-path"
+  },
+  {
+    "name": "minecraft-protocol",
+    "version": "1.66.2",
+    "relative": "minecraft-protocol"
+  },
+  {
+    "name": "mineflayer",
+    "version": "4.37.1",
+    "relative": "mineflayer"
+  },
+  {
+    "name": "mineflayer-pathfinder",
+    "version": "2.4.5",
+    "relative": "mineflayer-pathfinder"
+  },
+  {
+    "name": "mojangson",
+    "version": "2.0.4",
+    "relative": "mojangson"
+  },
+  {
+    "name": "moo",
+    "version": "0.5.3",
+    "relative": "moo"
+  },
+  {
+    "name": "ms",
+    "version": "2.1.3",
+    "relative": "ms"
+  },
+  {
+    "name": "nearley",
+    "version": "2.20.1",
+    "relative": "nearley"
+  },
+  {
+    "name": "node-fetch",
+    "version": "2.7.0",
+    "relative": "node-fetch"
+  },
+  {
+    "name": "node-rsa",
+    "version": "0.4.2",
+    "relative": "node-rsa"
+  },
+  {
+    "name": "prismarine-auth",
+    "version": "3.1.1",
+    "relative": "prismarine-auth"
+  },
+  {
+    "name": "prismarine-biome",
+    "version": "1.4.0",
+    "relative": "prismarine-biome"
+  },
+  {
+    "name": "prismarine-block",
+    "version": "1.23.0",
+    "relative": "prismarine-block"
+  },
+  {
+    "name": "prismarine-chat",
+    "version": "1.13.0",
+    "relative": "prismarine-chat"
+  },
+  {
+    "name": "prismarine-chunk",
+    "version": "1.41.0",
+    "relative": "prismarine-chunk"
+  },
+  {
+    "name": "prismarine-entity",
+    "version": "2.6.0",
+    "relative": "prismarine-entity"
+  },
+  {
+    "name": "prismarine-item",
+    "version": "1.18.0",
+    "relative": "prismarine-item"
+  },
+  {
+    "name": "prismarine-nbt",
+    "version": "2.8.0",
+    "relative": "prismarine-nbt"
+  },
+  {
+    "name": "prismarine-physics",
+    "version": "1.11.1",
+    "relative": "prismarine-physics"
+  },
+  {
+    "name": "prismarine-realms",
+    "version": "1.6.0",
+    "relative": "prismarine-realms"
+  },
+  {
+    "name": "prismarine-recipe",
+    "version": "1.5.0",
+    "relative": "prismarine-recipe"
+  },
+  {
+    "name": "prismarine-registry",
+    "version": "1.12.0",
+    "relative": "prismarine-registry"
+  },
+  {
+    "name": "prismarine-windows",
+    "version": "2.10.0",
+    "relative": "prismarine-windows"
+  },
+  {
+    "name": "prismarine-world",
+    "version": "3.7.0",
+    "relative": "prismarine-world"
+  },
+  {
+    "name": "process",
+    "version": "0.11.10",
+    "relative": "process"
+  },
+  {
+    "name": "protodef",
+    "version": "1.19.0",
+    "relative": "protodef"
+  },
+  {
+    "name": "protodef-validator",
+    "version": "1.4.0",
+    "relative": "protodef-validator"
+  },
+  {
+    "name": "punycode",
+    "version": "2.3.1",
+    "relative": "punycode"
+  },
+  {
+    "name": "railroad-diagrams",
+    "version": "1.0.0",
+    "relative": "railroad-diagrams"
+  },
+  {
+    "name": "randexp",
+    "version": "0.4.6",
+    "relative": "randexp"
+  },
+  {
+    "name": "readable-stream",
+    "version": "4.7.0",
+    "relative": "readable-stream"
+  },
+  {
+    "name": "ret",
+    "version": "0.1.15",
+    "relative": "ret"
+  },
+  {
+    "name": "safe-buffer",
+    "version": "5.2.1",
+    "relative": "safe-buffer"
+  },
+  {
+    "name": "semver",
+    "version": "7.8.5",
+    "relative": "semver"
+  },
+  {
+    "name": "smart-buffer",
+    "version": "4.2.0",
+    "relative": "smart-buffer"
+  },
+  {
+    "name": "string_decoder",
+    "version": "1.3.0",
+    "relative": "string_decoder"
+  },
+  {
+    "name": "tr46",
+    "version": "0.0.3",
+    "relative": "tr46"
+  },
+  {
+    "name": "typed-emitter",
+    "version": "2.1.0",
+    "relative": "prismarine-windows\\node_modules\\typed-emitter"
+  },
+  {
+    "name": "typed-emitter",
+    "version": "1.4.0",
+    "relative": "typed-emitter"
+  },
+  {
+    "name": "uint4",
+    "version": "0.1.2",
+    "relative": "uint4"
+  },
+  {
+    "name": "undici-types",
+    "version": "8.3.0",
+    "relative": "undici-types"
+  },
+  {
+    "name": "uri-js",
+    "version": "4.4.1",
+    "relative": "uri-js"
+  },
+  {
+    "name": "uuid",
+    "version": "8.3.2",
+    "relative": "uuid"
+  },
+  {
+    "name": "uuid",
+    "version": "10.0.0",
+    "relative": "yggdrasil\\node_modules\\uuid"
+  },
+  {
+    "name": "uuid-1345",
+    "version": "1.0.2",
+    "relative": "uuid-1345"
+  },
+  {
+    "name": "vec3",
+    "version": "0.1.10",
+    "relative": "vec3"
+  },
+  {
+    "name": "vec3",
+    "version": "0.2.0",
+    "relative": "prismarine-physics\\node_modules\\vec3"
+  },
+  {
+    "name": "webidl-conversions",
+    "version": "3.0.1",
+    "relative": "webidl-conversions"
+  },
+  {
+    "name": "whatwg-url",
+    "version": "5.0.0",
+    "relative": "whatwg-url"
+  },
+  {
+    "name": "xxhash-wasm",
+    "version": "0.4.2",
+    "relative": "xxhash-wasm"
+  },
+  {
+    "name": "yggdrasil",
+    "version": "1.8.0",
+    "relative": "yggdrasil"
+  }
+]
