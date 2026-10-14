@@ -1,0 +1,60 @@
+{
+  "version": "0.8.7",
+  "author": "Noimpty",
+  "sourceRepository": "https://github.com/LZhWi/Cyrene-Agent-Plugin/tree/codex/cyrene-hud-upstream",
+  "officialSdk": "0.2.0",
+  "sdkTarballIntegrity": "sha512-tKBHFgyiTwBVmWcTkgckAPKXVeNm8qY8Di8oZlyeFUhn0w5NN0yH5ZMnyEJ0/9kkZYjPnUJNb7/DI9pcVSLkbw==",
+  "manifestValid": true,
+  "mockContext": {
+    "passed": true,
+    "electronStubs": true,
+    "hardwareUsed": false,
+    "tools": 0,
+    "promptProviders": 0,
+    "disposedTwice": true
+  },
+  "unitTests": {
+    "passed": 87,
+    "files": 4,
+    "scope": "HUD hover, navigation, rings and notifications"
+  },
+  "hostCommit": "a4bd4419bf298e412bd2479c5f7bfa1a3066de00",
+  "isolatedIpcChecks": [
+    "Compatibility ZIP passes the pinned upstream manifest schema and uses four actual upstream IPC callbacks with an isolated in-memory session store",
+    "ZIP imports disabled, no-action is the default, renderer stays sandboxed and model/tool/prompt access is forbidden",
+    "Native settings select existing sessions in all four modes, metadata contains no history, and each mode opens the correct host window",
+    "Existing proactive Chat is selectable and opens normally; its purpose does not hide it or expose its history",
+    "Each new-session action creates an empty session in the requested mode; concurrent clicks merge into one creation",
+    "Settings target uses no conversation; deleted sessions show an error without creating replacements",
+    "Re-enable preserves avatar target and session settings; disabling removes every plugin IPC handler"
+  ],
+  "sourceContractChecked": {
+    "sourceContractChecked": true,
+    "endToEndVerified": false
+  },
+  "fullUserAppVerified": false,
+  "actualNativePointerHoverVerified": false,
+  "runtimeFilesSha256": {
+    "AsusSensors.exe": "7496bb1df68d824eeac2fd2bf1aeed5b8476cfc8353611c3d1063f56f456fd88",
+    "avatar.svg": "b38d141e5e18e91711a656b4149339d27d7113f64ce8337f5918a352bc5b9b8b",
+    "collector.cjs": "5de94d616eb0031622f59a7182a6450dea72f7c4e3e783e5a7f4220e979bc8e3",
+    "edition.cjs": "d057645145d0d7efa6e2b723be35fe6f5f53993524db84a0440d94b5e1b23208",
+    "glass.cjs": "3abb014e80b79baca36d76e7a57575c84ec02f2b17832de0ee0373f6aadc89fd",
+    "GlassHost.exe": "3055d435ac4d24443d06fc93ba4de4a29545b93b602ad3f2de440bb7e220e0a9",
+    "hud.html": "126a716989b910d9db7f5ac2552307f70ac494e08df97a2233655e1708298119",
+    "hud.js": "c42fc96cf70e28dec4fc30530dba8e965ebd52011ff1ead8cd46000b54ff7975",
+    "index.cjs": "a0cb3062c3b5f60fa74e17271db3d7d95b593c90b4cf50c321904c06f6895a5d",
+    "LICENSE": "4f8db34d48697033bc45d59e92efd0947777ea3a805c414b648656158faaa5a7",
+    "metrics.js": "f3413650d899e93f3251e0d857e50008e9b9a7736661229cb24404ac88472379",
+    "motion.cjs": "ce2e0ddeae307e97ee75106b9825cef13888ffd59c3ae7adeda105a13287f14a",
+    "native/AsusSensors.cs": "dd162ef2e7f783d02b5c9ecfd779c3bd68129894bcae2d7a7f6d567126666a92",
+    "native/GlassHost.cs": "282dd38eafd0e351e68d87984ac6431236d217772470b9c415184ba8289a50df",
+    "notifications.cjs": "9503906fe93a30257c71bc0efc01165c9c133784b81929effc425f94416c3743",
+    "preload.cjs": "19cdb7d78f21a935affa4b6290939b7c9bfb7e72b0710f3c3c75d6f104c1eef5",
+    "settings.cjs": "64c0322a9237c111cdf925500fcd24fd2edb1b26d4dcf6746632fb815a5631e0",
+    "settings.html": "4215ef6ebf0327988fe98a77774b0bd0a4613fe64ad2cc08296fad21764b8268",
+    "settings.js": "33381ce4ba676065f336fed3f4c966050889229b765b68a1dcc353659d192cb9",
+    "status.cjs": "4f01e7799f5d4226f83d252dfa484c91bfcb0a2f82af9e218be45bad5534ca56",
+    "style.css": "ce93922bba9eb8f50737f5ea2733aae2d27194d2f6f2ca208f1a3da4ed07d069"
+  }
+}
