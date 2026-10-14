@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'none'; img-src 'none'">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>独立陪伴聊天</title><link rel="stylesheet" href="ui.css"></head>
+<body><header><div><strong>独立陪伴聊天</strong><small>自己的会话 · 自己的记忆 · 不接管原生聊天</small></div><div class="header-actions"><button id="life-open">生活</button><button id="settings">模型与提示词</button></div></header>
+<main><aside><button id="new">＋ 新对话</button><nav id="sessions" aria-label="会话"></nav><hr><button id="sync">重试记忆同步</button><button id="extract">提取待处理记忆</button><button id="proactive-test">发送主动消息测试</button><p id="proactive-state"></p><p>手动测试只有点击并再次确认后才会调用模型并写入原生主动会话。</p><p>提取由记忆插件调用当前宿主模型。满 10 轮才提取，前 2 轮仅作上下文。</p><p>开发版：当前是词面检索＋证据提取闭环，完整本地记忆算法尚在迁移。</p></aside>
+<section class="conversation"><div id="messages" aria-live="polite"></div><div id="status" role="status"></div><form id="composer"><label for="input">消息</label><textarea id="input" rows="3" maxlength="20000" placeholder="在这里开始独立对话…"></textarea><div class="actions"><small>回复前先检索；非流式返回。Enter 换行。</small><button type="button" id="cancel">取消回复</button><button type="submit" id="send">发送</button></div></form></section></main>
+<dialog id="model-dialog"><form id="model-form"><h2>模型与提示词</h2><p>这里选择独立聊天模型；记忆插件的模型辅助操作使用当前宿主官方服务。外部配置始终只读，密钥不会复制到普通配置文件。</p>
+<label>模型来源<select id="mode"><option value="host">复用主程序配置</option><option value="custom">自己配置模型</option></select></label>
+<fieldset id="reuse-fields"><legend>复用方式</legend><label>配置来源<select id="reuse"><option value="current">当前加载插件的主程序（官方服务）</option><option value="file">只读引用另一 Cyrene 配置文件</option></select></label><label id="source-label">配置文件绝对路径<input id="source-path" autocomplete="off" placeholder="…\live2d-cyrene\model-settings.json"></label><p>默认使用当前宿主的官方模型服务。只有主动选择文件模式时才读取所填文件；该模式当前支持 OpenAI 兼容协议（含 Kimi）。</p></fieldset>
+<fieldset id="custom-fields"><legend>自定义模型 · OpenAI 兼容协议</legend><label>API Base URL<input id="base-url" placeholder="https://api.moonshot.cn/v1" autocomplete="off"></label><label>模型名称<input id="model" placeholder="kimi-k2.6" autocomplete="off"></label><label>API Key<input id="api-key" type="password" autocomplete="new-password" placeholder="留空保留已存密钥"></label><small id="key-state"></small><p>点击保存会将新密钥存入插件私有安全凭据存储。不会修改主程序配置。</p></fieldset>
+<label><input id="memory-enabled" type="checkbox" disabled> 启用 companion-memory 联动</label><p>由主程序“偏好设置 → 聊天上下文增强”统一控制；这里仅显示当前状态。</p>
+<label><input id="proactive-enabled" type="checkbox" disabled> 自动主动消息</label><p>由主程序“偏好设置 → 主动聊天”统一控制；这里仅显示当前状态。</p>
+<label><input id="feedback-learning-enabled" type="checkbox" disabled> 主动消息回应反馈学习</label><p>由主程序“偏好设置”统一控制；这里仅显示当前状态。</p>
+<label><input id="screen-monitor-enabled" type="checkbox" disabled> 后台屏幕观察</label><p>由主程序“偏好设置”统一控制；这里仅显示当前状态。</p>
+<label><input id="life-enabled" type="checkbox" disabled> 注入“你的生活”拟态日程</label><p>由主程序“偏好设置”统一控制；这里仅显示当前状态。</p><label>纪念日<textarea id="important-dates" rows="4" maxlength="20000" placeholder="07-27 认识纪念日" disabled></textarea></label>
+<p>原生 Chat 的风格统一由主程序聊天风格入口选择；五种内建风格使用本地版文本，自定义风格沿用主程序配置。</p><p>内置本地版 system、identity、soul 与原作台词；工具选择和权限继续遵循上游 Harness，不复制旧双阶段协议。</p>
+<label>人格追加指令（可选）<textarea id="system-prompt" rows="5" maxlength="32000" placeholder="留空使用内置人格；这里的内容会追加到稳定人格末尾"></textarea></label><p>追加内容属于稳定提示词，会参与原生 Chat 的缓存前缀。生活、记忆和本轮资料仍在动态上下文中。</p><div id="model-status" role="status"></div><div class="actions"><button type="button" id="close-settings">取消</button><button type="submit">保存选择</button></div></form></dialog>
+<dialog id="life-dialog" aria-labelledby="life-title"><h2 id="life-title">生活</h2>
+<p id="life-current"></p><p id="life-metrics"></p><p>这些数值描述角色的模拟生活；休息和精力变化不会阻止回复。</p>
+<label class="life-toggle"><input id="life-planning-enabled" type="checkbox"> 自动模型规划</label>
+<p>默认关闭。开启后早上生成基础计划、晚上更新日记；对话中角色也可调整尚未开始的安排。对话调整没有每日次数上限，两次成功调整至少间隔 15 分钟。固定调用失败或取消仍占本时段额度；最近聊天只读提供给模型。</p>
+<p id="life-budget"></p><div class="actions"><button id="life-plan-daily" type="button">生成今日计划</button><button id="life-plan-refine" type="button">更新未来安排</button><button id="life-plan-cancel" type="button">取消调用</button></div>
+<p id="life-result" role="status" aria-live="polite"></p><h3>今日模型计划与对话调整</h3><div id="life-plans" class="life-records"></div>
+<h3>近期生活记录</h3><div id="life-events" class="life-records"></div>
+<h3>生活分享记录</h3><div id="life-sharing" class="life-records"></div>
+<h3>跨日目标与未来意向</h3><p>你设置的目标最多同时启用 3 个，完成由你手动确认；昔涟可在晨间规划和相关对话中维护未来 7 天最多 3 项自己的意向。关联生活片段只表示实际参与。</p>
+<form id="life-goal-form"><label>目标标题<input id="life-goal-title" maxlength="120" required placeholder="例如：继续读自己的故事书"></label>
+<label>关联活动<select id="life-goal-activity" required></select></label><label>期限（可选）<input id="life-goal-due" type="date"></label>
+<label class="life-toggle"><input id="life-goal-remind" type="checkbox" checked> 允许目标提醒</label>
+<div class="actions"><button id="life-goal-reset" type="button">清空编辑</button><button id="life-goal-save" type="submit">创建目标</button></div></form>
+<div id="life-goals" class="life-records"></div><h3>生活日记</h3><p>模型可根据已记录的模拟事件撰写日记；未撰写时按事件整理。显示最近 7 篇，并保留模拟活动、离线推演和旧版记录的来源说明。手动重建不调用模型。</p>
+<div class="life-diary-actions"><label for="life-diary-date">选择日期</label><input id="life-diary-date" type="date"><button id="life-diary-rebuild" type="button">重建所选日记</button></div><div id="life-diaries" class="life-records"></div>
+<form id="life-diary-search-form" class="life-diary-actions"><label for="life-diary-search">查找日记或活动</label><input id="life-diary-search" maxlength="160" placeholder="日期、书名、散步等关键词"><button type="submit">搜索</button></form><div id="life-diary-search-results" class="life-records" aria-live="polite"></div>
+<h3>重要日期提醒</h3><p>新增、改期和删除仍在主程序偏好设置中操作。关闭某项提醒后，主动消息不会使用这一日期；用户主动询问时仍可查看。</p><div id="life-dates" class="life-records"></div>
+<p id="life-journal-status" role="status" aria-live="polite"></p><div class="actions"><button id="life-close" type="button">关闭</button></div></dialog>
+<script src="ui.js"></script></body></html>
